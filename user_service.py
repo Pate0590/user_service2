@@ -14,4 +14,4 @@ def user(id):
     return jsonify(user_info)
 
 if __name__ == '__main__':
-    app.run(port=5000)
+    app.run(debug=true)
