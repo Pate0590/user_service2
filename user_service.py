@@ -1,5 +1,5 @@
 # user_service.py
-# new line
+
 from flask import Flask, jsonify
 
 app = Flask(__name__)
@@ -14,4 +14,4 @@ def user(id):
     return jsonify(user_info)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(port=5000)
