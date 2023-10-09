@@ -11,7 +11,8 @@ def user(id):
         '2': {'name': 'Bob', 'email': 'bob@example.com'}
     }
     user_info = users.get(id, {})
+    print(user_info)
     return jsonify(user_info)
 
 if __name__ == '__main__':
-    app.run(port=5000)
+    app.run()
