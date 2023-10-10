@@ -19,10 +19,8 @@ def user(id):
 def create_user():
     new_user = request.get_json()
     
-    # Define a list of required keys
+    
     required_keys = ['name', 'email']
-
-    # Check if all required keys exist in the request data
     if all(key in new_user for key in required_keys):
         users[str(len( users.keys()) + 1)] = new_user
         print( users)
@@ -32,11 +30,10 @@ def create_user():
     
 @app.route('/user/<id>', methods=['PUT'])
 def update_user(id):
-    # Check if the user ID exists
+ 
     if id in  users:
         updated_user = request.get_json()
 
-        # Check if the required keys are present in the request data
         required_keys = ['name', 'email']
         if all(key in updated_user for key in required_keys):
             users[id] = updated_user
@@ -50,7 +47,7 @@ def update_user(id):
 @app.route('/user/<id>', methods=['DELETE'])
 def delete_user(id):
     if id in  users:
-        # If the user with the given ID exists, delete it
+       
         del  users[id]
         return jsonify({"success": True, "msg": "user deleted successfully"})
     else:
